@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Sathmin Ofc</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            transition: background-color 1s ease-in-out;
+        }
+
+        /* Digital clock style */
+        .clock {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            padding: 10px;
+            background-color: #333;
+            margin: 10px;
+        }
+
+        /* Running light border */
+        .title {
+            font-size: 48px;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 20px;
+            margin-top: 50px;
+            animation: runningBorder 2s infinite alternate;
+        }
+
+        @keyframes runningBorder {
+            0% {
+                text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+            }
+            100% {
+                text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            }
+        }
+
+        /* Buttons style */
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        /* Special style for the "Need to make your own website click here" button */
+        .special-button {
+            background-color: white;
+            color: black;
+        }
+
+        /* Footer style */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="startTime()">
+
+    <!-- Digital Clock -->
+    <div class="clock" id="clock"></div>
+
+    <!-- Website Title -->
+    <div class="title">Mr. Sathmin Ofc</div>
+
+    <!-- Contact Buttons -->
+    <div>
+        <a href="https://wa.me/+94761681904" class="button">Contact via WhatsApp</a>
+        <a href="https://t.me/+94765775266" class="button">Contact via Telegram</a>
+        <a href="https://github.com/Sathmin" class="button">Visit my GitHub</a>
+        <a href="mailto:sathminsadheep26@gmail.com" class="button">Contact via Gmail</a>
+        <a href="https://www.facebook.com/share/18q4iLPdcp/" class="button">Visit my Facebook</a>
+    </div>
+
+    <!-- Special Button -->
+    <a href="https://wa.me/+94761681904?text=I%20need%20a%20website" class="button special-button">Need to make your own website click here</a>
+
+    <!-- Footer -->
+    <div class="footer">
+        Sathmin Official 2025©
+    </div>
+
+    <script>
+        // Function to change background color randomly
+        function changeBackgroundColor() {
+            const colors = ['#ffcccb', '#ffeb3b', '#8bc34a', '#3f51b5', '#00bcd4', '#e91e63', '#9c27b0', '#f44336'];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        setInterval(changeBackgroundColor, 2000); // Change every 2 seconds
+
+        // Function to update the digital clock with IST
+        function startTime() {
+            const clock = document.getElementById('clock');
+            setInterval(function() {
+                const now = new Date();
+                const time = now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+                clock.textContent = time;
+            }, 1000); // Update every second
+        }
+    </script>
+</body>
+</html>
